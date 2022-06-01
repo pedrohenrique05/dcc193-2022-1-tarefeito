@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Tarefa {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE);
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
     private String titulo;
     
