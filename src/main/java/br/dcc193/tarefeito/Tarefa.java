@@ -12,18 +12,33 @@ public class Tarefa {
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
     private String titulo;
+    private Integer tomatos;
     
-    public Tarefa(Long id, String titulo) {
+    public Tarefa(Long id, String titulo, Integer tomatos) {
         this.id = id;
         this.titulo = titulo;
+        this.tomatos = tomatos;
+    }
+
+    public Tarefa(Long id, String titulo) {
+        this(id,titulo,0);
     }
 
     public Tarefa(String titulo) {
-        this(null,titulo);
+        this(null,titulo,0);
     }
 
     public Tarefa() {
-        this(null,null);
+        this(null,null,null);
+    }
+
+    
+    public Integer getTomatos() {
+        return tomatos;
+    }
+
+    public void setTomatos(Integer tomatos) {
+        this.tomatos = tomatos;
     }
 
     public Long getId() {
