@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class TarefaController {
@@ -29,8 +30,9 @@ public class TarefaController {
     }
 
     @RequestMapping({"/tarefa","/tarefa/index.html"})
-    @ResponseBody
-    public String index(){
-        return "Atividade Controller";
+    public ModelAndView index(){
+        ModelAndView mv = new ModelAndView("tarefa-index");
+        mv.addObject("mensagem","Ola Mundo");
+        return mv;
     }
 }
