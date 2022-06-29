@@ -15,7 +15,7 @@ public class TarefaController {
 
     @RequestMapping("/")
     @ResponseBody //A saida dessa função retorna direto ao cliente
-    public String index(){
+    public String indexOld(){
         Tarefa t = new Tarefa("Criado em "+new Date());
         rep.save(t);
         
@@ -27,5 +27,10 @@ public class TarefaController {
         }
         return sb.toString();
     }
-    
+
+    @RequestMapping({"/tarefa","/tarefa/index.html"})
+    @ResponseBody
+    public String index(){
+        return "Atividade Controller";
+    }
 }
