@@ -10,11 +10,14 @@
     <h1>
         Tarefas
     </h1>
+    <table>
     <tr th:each="tarefa: ${tarefas}" th:object="${tarefa}">
-        <th th:text="*{id}"></th>
+        <td th:text="*{id}"></td>
         <th th:text="*{titulo}"></th>
         <th th:text="*{tomatos}"></th>
+        <th><a th:href="@{./editar/{id}(id=*{id})}">Editar</a></th>
+        <th><a th:href="@{./excluir/{id}(id=*{id})}">Excluir</a></th>
     </tr>
-    
+</table>
 </body>
 </html>

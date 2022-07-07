@@ -8,7 +8,8 @@
 </head>
 <body>
     <h1>Nova Tarefa</h1>
-    <form th:action="@{nova.html}" method="post" th:object="${tarefa}">
+    <form th:action="@{../editar/{id}(id=*{id})}" method="post" th:object="${tarefa}">
+        <input type="hidden"  th:field="*{id}"/>
         <div>
             <label for="titulo">Titulo</label>
             <input type="text" id="titulo" th:field="*{titulo}"/>
