@@ -25,6 +25,14 @@ public class Usuario {
         this.password = password;
     }
 
+    public Usuario(Long id, String nome) {
+        this(id,nome,null);
+    }
+
+    public Usuario(String nome) {
+        this(null,nome,null);
+    }
+
     public Usuario(){
         this(null,null,null);
     }
