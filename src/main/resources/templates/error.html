@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout-padrao::head(titulo='Erro')" />
+
+<body>
+    <header th:replace="layout-padrao::header(titulo='Erro')" />
+    <div>
+        <h1>Erro: <span th:text="${status}"></span></h1>
+        <p th:text="${error}"></p>
+        <p th:text="${message}"></p>
+    </div>
+</body>
+
+</html>

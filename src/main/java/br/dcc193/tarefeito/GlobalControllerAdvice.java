@@ -1,24 +1,14 @@
 package br.dcc193.tarefeito;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
-public class HomeController {
-
-    @GetMapping("/layout.html")
-    public String layout(){
-        return "layout-padrao";
-    }
-
-    @GetMapping("/erro.html")
-    public String erro(){
-        int a = 10/0;
-        return "layout-padrao";
-    }
-
+@Component
+@ControllerAdvice
+public class GlobalControllerAdvice {
+    
     @ExceptionHandler
     public ModelAndView trataDivisaoPorZero( ArithmeticException e){
         ModelAndView mv = new ModelAndView("error");

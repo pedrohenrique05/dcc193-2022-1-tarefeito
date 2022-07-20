@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="layout-padrao::head"/>
+
+<head th:replace="layout-padrao::head(titulo='Uruarios')" />
+
 <body>
-    <header th:replace="layout-padrao::header"/>
+    <header th:replace="layout-padrao::header(titulo='Uruarios')" />
+
     <h1>Usuarios!</h1>
     <p th:text="${mensagem}"></p>
     <nav>
         <ul>
-            <li><a href="./listar.html">Listar</a></Listar></li>
+            <li><a href="./listar.html">Listar</a></Listar>
+            </li>
             <li><a href="./novo.html">Criar</a></li>
         </ul>
     </nav>
 </body>
+
 </html>

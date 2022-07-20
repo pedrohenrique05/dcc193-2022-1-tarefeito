@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt" xmlns:th="http://www.thymeleaf.org">
-    <head th:replace="layout-padrao::head"/>
-<body>
-    <header th:replace="layout-padrao::header"/>
 
+<head th:replace="layout-padrao::head(titulo='Tarefas')" />
+
+<body>
+
+    <header th:replace="layout-padrao::header(titulo='Tarefas')" />
     
     <h1>Tarefas</h1>
     <p th:text="${mensagem}"></p>
-    <nav>
+    <nav th:fragment="acoes">
         <ul>
-            <li><a href="./listar.html">Listar</a></Listar></li>
+            <li><a href="./listar.html">Listar</a></Listar>
+            </li>
             <li><a href="./nova.html">Criar</a></li>
         </ul>
     </nav>
 </body>
+
 </html>
